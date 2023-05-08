@@ -13,7 +13,6 @@ import MapKit
 
 struct ProfileView: View {
     @EnvironmentObject var vm: UserViewmodel
-    
     var body: some View {
         ZStack{
             Color.background.edgesIgnoringSafeArea(.all)

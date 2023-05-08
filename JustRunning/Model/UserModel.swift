@@ -13,13 +13,13 @@
 struct UserData{
     var validable:Bool = false
     var gender: String = ""
-    var name: String = ""
+    var name: String = "用户0001"
     var username: String = ""
     var password: String = ""
-    var email: String = ""
-    var phonenumber: String = ""
+    var email: String = "test@email.com"
+    var phonenumber: String = "18888888888"
     var portrait: String = ""
-    var location: String = ""
+    var location: String = "湖北省武汉市武汉大学"
     
     init(validable: Bool, gender: String, name: String, username: String, password: String, email: String, phonenumber: String, portrait: String, location: String) {
         self.validable = validable

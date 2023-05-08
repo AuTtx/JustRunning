@@ -26,7 +26,7 @@ struct LoginView: View {
 //           print("创建成功")
 //        }
     }
-    func matchUserInCoreData(username: String, context: NSManagedObjectContext) -> User?{
+    func matchUserInCoreData(username: String) -> User?{
         for item in users{
             if username == item.username{
                 return item
@@ -39,7 +39,7 @@ struct LoginView: View {
     func login(username: String, password: String, context: NSManagedObjectContext){
         print("\(username)")
         print("\(password)")
-        if let theLogginUser = matchUserInCoreData(username: username, context: context){
+        if let theLogginUser = matchUserInCoreData(username: username){
             if username == theLogginUser.username && password == theLogginUser.password{
                 vm.authenticated = true
                 theLogginUser.validable = true
@@ -86,7 +86,23 @@ struct LoginView: View {
                                     .font(.subheadline).bold()
                             }
                             .padding(8)
+                            .sheet(isPresented: $showSheet){
+                                ScrollView{
+                                    ForEach(users){ user in
+                                        HStack {
+                                            VStack(alignment: .leading, spacing: 6) {
+                                                Text(user.username!)
+                                                    .bold()
+                                                Text(user.password!)
+                                                    .bold()
+                                                Divider().bold()
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                             Spacer()
+                                
                         }
                         Button(action: {withAnimation{
                             login(username: vm.username, password: vm.password, context: managedObjContext)

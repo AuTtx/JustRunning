@@ -11,7 +11,7 @@ import CoreData
 
 class UserViewmodel: ObservableObject{
 //    @Published var user: User
-    @FetchRequest(sortDescriptors: [SortDescriptor(\.name, order: .reverse)]) var users: FetchedResults<User>
+//    @FetchRequest(sortDescriptors: [SortDescriptor(\.name, order: .reverse)]) var users: FetchedResults<User>
 //    @Environment(\.managedObjectContext)  var managedObjContext
     
     //    @AppStorage("AUTH_KEY") var authenticated = false
@@ -53,21 +53,21 @@ class UserViewmodel: ObservableObject{
 //        }
 //    }
     
-    func login(username: String, password: String, context: NSManagedObjectContext){
-        print("\(username)")
-        print("\(password)")
-        if let theLogginUser = matchUserInCoreData(username: username, context: context){
-            if username == theLogginUser.username && password == theLogginUser.password{
-                authenticated = true
-                theLogginUser.validable = true
-                currentUser = theLogginUser.transformFromUser(user: theLogginUser)
-            }else{
-                print("用户名或密码错误")
-            }
-        }else{
-            print("账号不存在，请创建账号")
-        }
-    }
+//    func login(username: String, password: String, context: NSManagedObjectContext){
+//        print("\(username)")
+//        print("\(password)")
+//        if let theLogginUser = matchUserInCoreData(username: username, context: context){
+//            if username == theLogginUser.username && password == theLogginUser.password{
+//                authenticated = true
+//                theLogginUser.validable = true
+//                currentUser = theLogginUser.transformFromUser(user: theLogginUser)
+//            }else{
+//                print("用户名或密码错误")
+//            }
+//        }else{
+//            print("账号不存在，请创建账号")
+//        }
+//    }
     func logOut(){
         withAnimation{
             authenticated = false
@@ -78,13 +78,13 @@ class UserViewmodel: ObservableObject{
 
 
 
-    func createAnAccount(username: String, password: String, context: NSManagedObjectContext){
-            //在数据库中创建账户
-        DataController().signUpAccountInCoreData(username: username, password: password, context: context)
-//        if let matchedUserIndex = users.firstIndex(where: { $0.username == username }){
-//           print("创建成功")
-//        }
-    }
+//    func createAnAccount(username: String, password: String, context: NSManagedObjectContext){
+//            //在数据库中创建账户
+//        DataController().signUpAccountInCoreData(username: username, password: password, context: context)
+////        if let matchedUserIndex = users.firstIndex(where: { $0.username == username }){
+////           print("创建成功")
+////        }
+//    }
 
     func forgetPassword(){
 //忘记密码
@@ -93,24 +93,17 @@ class UserViewmodel: ObservableObject{
 
 
 
+
+//
 //    func matchUserInCoreData(username: String, context: NSManagedObjectContext) -> User?{
-//        if let matchedUserIndex = users.firstIndex(where: { $0.username == username }){
-//            return users[matchedUserIndex]
-//        }else{
-//            return nil
+//        for item in users{
+//            if username == item.username{
+//                return item
+//            }else{
+//                return nil
+//            }
 //        }
+//        return nil
 //    }
-
-
-    func matchUserInCoreData(username: String, context: NSManagedObjectContext) -> User?{
-        for item in users{
-            if username == item.username{
-                return item
-            }else{
-                return nil
-            }
-        }
-        return nil
-    }
     
 }

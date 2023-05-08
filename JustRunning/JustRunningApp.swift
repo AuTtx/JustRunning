@@ -9,13 +9,13 @@ import SwiftUI
 
 @main
 struct JustRunningApp: App {
-//    @StateObject private var dataController = DataController()
+    @StateObject private var dataController = DataController()
     
     var body: some Scene {
         WindowGroup {
            LoginView().environmentObject(UserViewmodel())
             .environment(\.managedObjectContext,
-                          DataController.container.viewContext)
+                          dataController.container.viewContext)
         }
     }
 }

@@ -9,10 +9,10 @@ import Foundation
 import CoreData
 
 class DataController: ObservableObject{
-    static let container = NSPersistentContainer(name: "User")
-    
+     let container = NSPersistentContainer(name: "User")
+    static var count = 1
     init() {
-        DataController.container.loadPersistentStores { description, error in
+        container.loadPersistentStores { description, error in
             if let error = error {
                 print("Failed to load data in DataController \(error.localizedDescription)")
             }
@@ -35,17 +35,19 @@ class DataController: ObservableObject{
         user.id = UUID()
         user.username = username
         user.password = password
-        user.name = ""
+        user.name = "用户\(DataController.count)"
         user.gender = ""
         user.phoneNumber = ""
         user.portrait = ""
-        user.email = ""
-        user.location = ""
+        user.email = "1231212321@email.com"
+        user.location = "whu"
         user.validable = false
+        DataController.count += 1
         
         save(context: context)
-        print("user.username" + user.username!)
-        print("user.password" + user.password!)
+        
+        print("保存user.username" + user.username!)
+        print("保存user.password" + user.password!)
     }
     
     func editUserInfoInCoreData(user: User, name: String, gender: String, phoneNumber: String, potrait: String, email: String, location: String, context: NSManagedObjectContext){
