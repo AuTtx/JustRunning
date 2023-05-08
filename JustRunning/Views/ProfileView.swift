@@ -74,13 +74,13 @@ struct PersonInfo: View{
             }
             .padding()
             VStack(alignment: .leading) {
-                Text("\(vm.user.name)")
+                Text("\(vm.currentUser.name)")
                     .font(.title2)
                     .bold()
-                Text("\(vm.user.email)")
+                Text("\(vm.currentUser.email)")
                     .font(.caption)
                     .foregroundColor(.secondary)
-                Text("\(vm.user.location.city)")
+                Text("\(vm.currentUser.location)")
             }
             Spacer()
         }

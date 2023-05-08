@@ -9,11 +9,13 @@ import SwiftUI
 
 @main
 struct JustRunningApp: App {
-    let persistenceController = PersistenceController.shared
-
+//    @StateObject private var dataController = DataController()
+    
     var body: some Scene {
         WindowGroup {
            LoginView().environmentObject(UserViewmodel())
+            .environment(\.managedObjectContext,
+                          DataController.container.viewContext)
         }
     }
 }

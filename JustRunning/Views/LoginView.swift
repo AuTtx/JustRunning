@@ -9,13 +9,55 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct LoginView: View {
     @EnvironmentObject var vm: UserViewmodel
+    @Environment(\.managedObjectContext) var managedObjContext
+    @FetchRequest(sortDescriptors: [SortDescriptor(\.name, order: .reverse)]) var users: FetchedResults<User>
     
     @State private var showPassword: Bool = false
     @State private var showSheet: Bool = false
     
+    func createAnAccount(username: String, password: String, context: NSManagedObjectContext){
+            //在数据库中创建账户
+        DataController().signUpAccountInCoreData(username: username, password: password, context: context)
+//        if let matchedUserIndex = users.firstIndex(where: { $0.username == username }){
+//           print("创建成功")
+//        }
+    }
+    func matchUserInCoreData(username: String, context: NSManagedObjectContext) -> User?{
+        for item in users{
+            if username == item.username{
+                return item
+            }else{
+                return nil
+            }
+        }
+        return nil
+    }
+    func login(username: String, password: String, context: NSManagedObjectContext){
+        print("\(username)")
+        print("\(password)")
+        if let theLogginUser = matchUserInCoreData(username: username, context: context){
+            if username == theLogginUser.username && password == theLogginUser.password{
+                vm.authenticated = true
+                theLogginUser.validable = true
+                vm.currentUser = theLogginUser.transformFromUser(user: theLogginUser)
+            }else{
+                print("用户名或密码错误")
+            }
+        }else{
+            print("账号不存在，请创建账号")
+        }
+    }
+    func logOut(){
+        withAnimation{
+            vm.authenticated = false
+            vm.currentUser.validable = false
+        }
+        print("退出登陆")
+    }
     var body: some View {
         if vm.authenticated{
             MainView()
@@ -31,13 +73,23 @@ struct LoginView: View {
                     Spacer()
                     VStack{
                         HStack{
-                            LoginTextView(name: $vm.user.login.username)
+                            LoginTextView(name: $vm.username)
                         }
                         HStack{
-                            PasswordTextView(name: $vm.user.login.password, showPassword: $showPassword)
+                            PasswordTextView(name: $vm.password, showPassword: $showPassword)
+                        }
+                        HStack{
+                            Button(action:{withAnimation{
+                                showSheet.toggle()
+                            }}){
+                                Text("忘记密码 ?")
+                                    .font(.subheadline).bold()
+                            }
+                            .padding(8)
+                            Spacer()
                         }
                         Button(action: {withAnimation{
-                            vm.login(username: vm.user.login.username, password: vm.user.login.password)
+                            login(username: vm.username, password: vm.password, context: managedObjContext)
                         }}){
                                 Text("Sign In")
                                     .foregroundColor(.darkText)
@@ -46,6 +98,14 @@ struct LoginView: View {
                                     .background(Color.secondaryBackground)
                                     .cornerRadius(16)
                                     .shadow(color: .darkText.opacity(0.2), radius: 2, x: 1.0, y: 2)
+                        }
+                        Button(action:{withAnimation{
+                           //创建账号界面
+                            createAnAccount(username: vm.username, password: vm.password, context: managedObjContext)
+                        }}){
+                            Text("没有账号？点此创建").font(.headline)
+                                .foregroundColor(.darkText)
+                                .shadow(color: .darkText.opacity(0.1), radius: 2, x: 1, y: 2)
                         }
                     }
                     .padding()
@@ -75,7 +135,7 @@ struct LoginTextView: View{
                 .padding()
                 .background(Color.background)
                 .cornerRadius(16)
-                .shadow(color: .borderColor(condition: vm.user.validable), radius: 2, x: 0.0, y: 0.0)
+                .shadow(color: .borderColor(condition: vm.authenticated), radius: 2, x: 0.0, y: 0.0)
                 .disableAutocorrection(true)
                 .autocapitalization(.none)
         }
@@ -94,7 +154,7 @@ struct PasswordTextView: View{
                     .padding()
                     .background(Color.background)
                     .cornerRadius(16)
-                    .shadow(color: .borderColor(condition: vm.user.validable), radius: 2, x: 0.0, y: 0.0)
+                    .shadow(color: .borderColor(condition: vm.authenticated), radius: 2, x: 0.0, y: 0.0)
                     .disableAutocorrection(true)
                     .autocapitalization(.none)
                 Button(action:{
