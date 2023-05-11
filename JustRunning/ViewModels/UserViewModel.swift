@@ -16,11 +16,11 @@ class UserViewmodel: ObservableObject{
     @Published var isValidable: Bool? = nil
     //    var username: String = ""
     //    var password: String = ""
-    //    var name: String = ""
-    //    var gender: String = ""
-    //    var email: String = ""
-    //    var location: String = ""
-    //    var phoneNubmer: String = ""
+    var name: String = ""
+    var gender: String = ""
+    var email: String = ""
+    var location: String = ""
+    var phoneNubmer: String = ""
     @State private var showPassword: Bool = false
     
     let manager = CoreDataManager.instance
@@ -51,6 +51,13 @@ class UserViewmodel: ObservableObject{
         }
     }
     
+    func editUserInCoredata(user: UserEntity){
+        user.name = name
+        user.gender = gender
+        user.email = email
+        user.phoneNumber = phoneNubmer
+        user.location = location
+    }
     
     func addUserInCoreData(username: String, password: String, users: [UserEntity]){
         //查找有没有重复的

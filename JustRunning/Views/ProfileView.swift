@@ -110,17 +110,18 @@ struct Buttons: View{
             .shadow(color: .accentColor.opacity(0.1), radius: 2, x: 0.5, y: 1)
         }
         
-        NavigationLink(destination: UserInfoView()){
-            HStack {
-                Image(systemName: "person.fill")
-                Text("个人信息")
-            }.font(.headline)
-            .padding()
-            .background(Color.secondaryBackground)
-            .cornerRadius(12)
-            .shadow(color: .accentColor.opacity(0.1), radius: 2, x: 0.5, y: 1)
-        }
-        
+            NavigationLink(
+                destination: UserInfoView(),
+                label: {
+                    HStack {
+                        Image(systemName: "person.fill")
+                        Text("个人信息")
+                    }.font(.headline)
+                        .padding()
+                        .background(Color.secondaryBackground)
+                        .cornerRadius(12)
+                        .shadow(color: .accentColor.opacity(0.1), radius: 2, x: 0.5, y: 1)
+                })
         
         NavigationLink(destination: ZStack {
             Color.background.edgesIgnoringSafeArea(.all)

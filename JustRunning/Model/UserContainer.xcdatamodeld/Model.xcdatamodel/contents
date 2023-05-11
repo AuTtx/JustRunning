@@ -8,6 +8,7 @@
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserEntity" inverseName="sportdata" inverseEntity="UserEntity"/>
     </entity>
     <entity name="UserEntity" representedClassName="UserEntity" isAbstract="YES" syncable="YES" codeGenerationType="class">
+        <attribute name="birthday" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="email" optional="YES" attributeType="String"/>
         <attribute name="gender" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
@@ -16,6 +17,7 @@
         <attribute name="password" optional="YES" attributeType="String"/>
         <attribute name="phoneNumber" optional="YES" attributeType="String"/>
         <attribute name="portrait" optional="YES" attributeType="String"/>
+        <attribute name="signature" optional="YES" attributeType="String"/>
         <attribute name="username" optional="YES" attributeType="String"/>
         <attribute name="validable" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <relationship name="sportdata" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SportsEntity" inverseName="user" inverseEntity="SportsEntity"/>
