@@ -13,51 +13,12 @@ import CoreData
 
 struct LoginView: View {
     @EnvironmentObject var vm: UserViewmodel
-    @Environment(\.managedObjectContext) var managedObjContext
-    @FetchRequest(sortDescriptors: [SortDescriptor(\.name, order: .reverse)]) var users: FetchedResults<User>
     
     @State private var showPassword: Bool = false
     @State private var showSheet: Bool = false
+    @State private var username: String = ""
+    @State private var password: String = ""
     
-    func createAnAccount(username: String, password: String, context: NSManagedObjectContext){
-            //在数据库中创建账户
-        DataController().signUpAccountInCoreData(username: username, password: password, context: context)
-//        if let matchedUserIndex = users.firstIndex(where: { $0.username == username }){
-//           print("创建成功")
-//        }
-    }
-    func matchUserInCoreData(username: String) -> User?{
-        for item in users{
-            if username == item.username{
-                return item
-            }else{
-                return nil
-            }
-        }
-        return nil
-    }
-    func login(username: String, password: String, context: NSManagedObjectContext){
-        print("\(username)")
-        print("\(password)")
-        if let theLogginUser = matchUserInCoreData(username: username){
-            if username == theLogginUser.username && password == theLogginUser.password{
-                vm.authenticated = true
-                theLogginUser.validable = true
-                vm.currentUser = theLogginUser.transformFromUser(user: theLogginUser)
-            }else{
-                print("用户名或密码错误")
-            }
-        }else{
-            print("账号不存在，请创建账号")
-        }
-    }
-    func logOut(){
-        withAnimation{
-            vm.authenticated = false
-            vm.currentUser.validable = false
-        }
-        print("退出登陆")
-    }
     var body: some View {
         if vm.authenticated{
             MainView()
@@ -73,10 +34,10 @@ struct LoginView: View {
                     Spacer()
                     VStack{
                         HStack{
-                            LoginTextView(name: $vm.username)
+                            LoginTextView(name: $username)
                         }
                         HStack{
-                            PasswordTextView(name: $vm.password, showPassword: $showPassword)
+                            PasswordTextView(name: $password, showPassword: $showPassword)
                         }
                         HStack{
                             Button(action:{withAnimation{
@@ -88,7 +49,9 @@ struct LoginView: View {
                             .padding(8)
                             .sheet(isPresented: $showSheet){
                                 ScrollView{
-                                    ForEach(users){ user in
+                                    Text("共有\(vm.users.count)个账户")
+                                        .bold()
+                                    ForEach(vm.users){ user in
                                         HStack {
                                             VStack(alignment: .leading, spacing: 6) {
                                                 Text(user.username!)
@@ -105,7 +68,7 @@ struct LoginView: View {
                                 
                         }
                         Button(action: {withAnimation{
-                            login(username: vm.username, password: vm.password, context: managedObjContext)
+                            vm.login(username: username, password: password, users: vm.users)
                         }}){
                                 Text("Sign In")
                                     .foregroundColor(.darkText)
@@ -117,7 +80,7 @@ struct LoginView: View {
                         }
                         Button(action:{withAnimation{
                            //创建账号界面
-                            createAnAccount(username: vm.username, password: vm.password, context: managedObjContext)
+                            vm.addUserInCoreData(username: username, password: password, users: vm.users)
                         }}){
                             Text("没有账号？点此创建").font(.headline)
                                 .foregroundColor(.darkText)
@@ -144,7 +107,6 @@ struct LoginView: View {
 struct LoginTextView: View{
     @EnvironmentObject var vm: UserViewmodel
     @Binding var name: String
-//    @Binding var isAuthenticated: Bool?
     var body: some View {
         HStack {
             TextField("请输入",text: $name)
@@ -196,7 +158,7 @@ struct PasswordTextView: View{
 }
 
 struct LoginView_Previews: PreviewProvider {
-    
+
     static var previews: some View {
         LoginView().environmentObject(UserViewmodel())
     }

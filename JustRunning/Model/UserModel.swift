@@ -9,38 +9,38 @@
 //import SwiftUI
 //
 
-
-struct UserData{
-    var validable:Bool = false
-    var gender: String = ""
-    var name: String = "用户0001"
-    var username: String = ""
-    var password: String = ""
-    var email: String = "test@email.com"
-    var phonenumber: String = "18888888888"
-    var portrait: String = ""
-    var location: String = "湖北省武汉市武汉大学"
-    
-    init(validable: Bool, gender: String, name: String, username: String, password: String, email: String, phonenumber: String, portrait: String, location: String) {
-        self.validable = validable
-        self.gender = gender
-        self.name = name
-        self.username = username
-        self.password = password
-        self.email = email
-        self.phonenumber = phonenumber
-        self.portrait = portrait
-        self.location = location
-    }
-    init(){
-    }
-}
-
-extension User{
-    func transformFromUser(user: User) -> UserData{
-        return UserData(validable: user.validable, gender: user.gender!, name: user.name!, username: user.username!, password: user.password!, email: user.email!, phonenumber: user.phoneNumber!, portrait: user.portrait!, location: user.location!)
-    }
-}
+//
+//struct UserData{
+//    var validable:Bool = false
+//    var gender: String = ""
+//    var name: String = "用户0001"
+//    var username: String = ""
+//    var password: String = ""
+//    var email: String = "test@email.com"
+//    var phonenumber: String = "18888888888"
+//    var portrait: String = ""
+//    var location: String = "湖北省武汉市武汉大学"
+//    
+//    init(validable: Bool, gender: String, name: String, username: String, password: String, email: String, phonenumber: String, portrait: String, location: String) {
+//        self.validable = validable
+//        self.gender = gender
+//        self.name = name
+//        self.username = username
+//        self.password = password
+//        self.email = email
+//        self.phonenumber = phonenumber
+//        self.portrait = portrait
+//        self.location = location
+//    }
+//    init(){
+//    }
+//}
+//
+//extension User{
+//    func transformFromUser(user: User) -> UserData{
+//        return UserData(validable: user.validable, gender: user.gender!, name: user.name!, username: user.username!, password: user.password!, email: user.email!, phonenumber: user.phoneNumber!, portrait: user.portrait!, location: user.location!)
+//    }
+//}
 //struct User1{
 //    var validable:Bool = false
 //    var gender: String

@@ -39,6 +39,7 @@ struct ProfileView: View {
 
 
 struct PersonInfo: View{
+//    @EnvironmentObject var vm: UserViewmodel
     let vm: UserViewmodel
     @State var isPickerShowing = false
     @State var selectedImage: UIImage?
@@ -73,13 +74,16 @@ struct PersonInfo: View{
             }
             .padding()
             VStack(alignment: .leading) {
-                Text("\(vm.currentUser.name)")
+//                Text("\(vm.currentUser.name ?? "用户名未设置") ")
+                Text("current失败")
                     .font(.title2)
                     .bold()
-                Text("\(vm.currentUser.email)")
+//                Text("\(vm.currentUser.email ?? "邮箱未设置")")
+                Text("current失败")
                     .font(.caption)
                     .foregroundColor(.secondary)
-                Text("\(vm.currentUser.location)")
+//                Text("\(vm.currentUser.location ?? "暂未获取地址")")
+                Text("current失败")
             }
             Spacer()
         }
@@ -87,7 +91,8 @@ struct PersonInfo: View{
     }
 }
 
-struct  Buttons: View{
+struct Buttons: View{
+//    @EnvironmentObject var vm: UserViewmodel
     let vm: UserViewmodel
     var body: some View{
         NavigationLink(destination: ZStack {
@@ -104,10 +109,8 @@ struct  Buttons: View{
             .cornerRadius(12)
             .shadow(color: .accentColor.opacity(0.1), radius: 2, x: 0.5, y: 1)
         }
-        NavigationLink(destination: ZStack {
-            Color.background.edgesIgnoringSafeArea(.all)
-            Text("History")
-        }){
+        
+        NavigationLink(destination: UserInfoView()){
             HStack {
                 Image(systemName: "person.fill")
                 Text("个人信息")
@@ -117,6 +120,7 @@ struct  Buttons: View{
             .cornerRadius(12)
             .shadow(color: .accentColor.opacity(0.1), radius: 2, x: 0.5, y: 1)
         }
+        
         NavigationLink(destination: ZStack {
             Color.background.edgesIgnoringSafeArea(.all)
             Text("Orders")
@@ -130,6 +134,7 @@ struct  Buttons: View{
             .cornerRadius(12)
             .shadow(color: .accentColor.opacity(0.1), radius: 2, x: 0.5, y: 1)
         }
+        
         HStack{
             Image(systemName: "rectangle.portrait.and.arrow.right")
             Button("退出登录"){
