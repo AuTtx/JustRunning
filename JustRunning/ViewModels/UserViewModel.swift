@@ -13,6 +13,7 @@ class UserViewmodel: ObservableObject{
     @AppStorage("AUTH_KEY") var authenticated = false {
         willSet{ objectWillChange.send() }
     }
+    @Published var isValidable: Bool? = nil
     //    var username: String = ""
     //    var password: String = ""
     //    var name: String = ""
@@ -24,12 +25,12 @@ class UserViewmodel: ObservableObject{
     
     let manager = CoreDataManager.instance
     @Published var users: [UserEntity] = []
-    //    @Published var currentUser: UserEntity
+    @Published var currentUser: UserEntity
     
     init(){
-        //        currentUser = UserEntity(context: manager.context)
-        //        currentUser.username = ""
-        //        currentUser.password = ""
+        currentUser = UserEntity(context: manager.context)
+        currentUser.username = "CURRENTUSER"
+        currentUser.password = "CURRENTUSER"
         getUsers()
     }
     
@@ -66,7 +67,7 @@ class UserViewmodel: ObservableObject{
             newUser.portrait = "未设置"
             newUser.email = "未设置"
             newUser.location = "未设置"
-            newUser.validable = false
+//            newUser.validable = false
             save()
         }
         
@@ -124,9 +125,12 @@ class UserViewmodel: ObservableObject{
         print("当前登陆的账号为\(username)密码为\(password)")
         if let theLogginUser = getSpecifiedUser(with: username,users: users){
             if username == theLogginUser.username && password == theLogginUser.password{
-                authenticated = true
                 theLogginUser.validable = true
-//                currentUser = theLogginUser
+                isValidable = true
+                currentUser = theLogginUser
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+                    self.authenticated = true
+                }
             }else{
                 print("用户名或密码错误")
             }
@@ -137,6 +141,7 @@ class UserViewmodel: ObservableObject{
     func logOut(){
         withAnimation{
             authenticated = false
+            isValidable = nil
 //            currentUser = UserEntity()
         }
         print("退出登陆")

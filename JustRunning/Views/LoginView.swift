@@ -34,10 +34,33 @@ struct LoginView: View {
                     Spacer()
                     VStack{
                         HStack{
-                            LoginTextView(name: $username)
+                            LoginTextView(name: $username,isValid: $vm.isValidable)
+                            if let valid = vm.isValidable{
+                                if valid {
+                                    Image(systemName: "checkmark")
+                                        .foregroundColor(.green)
+                                        .padding(8)
+                                } else {
+                                    Image(systemName: "xmark")
+                                        .foregroundColor(.red)
+                                        .padding(8)
+                                }
+                            }
                         }
+                        
                         HStack{
-                            PasswordTextView(name: $password, showPassword: $showPassword)
+                            PasswordTextView(name: $password, isValid: $vm.isValidable, showPassword: $showPassword)
+                            if let valid = vm.isValidable{
+                                if valid {
+                                    Image(systemName: "checkmark")
+                                        .foregroundColor(.green)
+                                        .padding(8)
+                                } else {
+                                    Image(systemName: "xmark")
+                                        .foregroundColor(.red)
+                                        .padding(8)
+                                }
+                            }
                         }
                         HStack{
                             Button(action:{withAnimation{
@@ -107,13 +130,14 @@ struct LoginView: View {
 struct LoginTextView: View{
     @EnvironmentObject var vm: UserViewmodel
     @Binding var name: String
+    @Binding var isValid: Bool?
     var body: some View {
         HStack {
             TextField("请输入",text: $name)
                 .padding()
                 .background(Color.background)
                 .cornerRadius(16)
-                .shadow(color: .borderColor(condition: vm.authenticated), radius: 2, x: 0.0, y: 0.0)
+                .shadow(color: .borderColor(condition: isValid), radius: 2, x: 0.0, y: 0.0)
                 .disableAutocorrection(true)
                 .autocapitalization(.none)
         }
@@ -123,7 +147,7 @@ struct LoginTextView: View{
 struct PasswordTextView: View{
     @EnvironmentObject var vm: UserViewmodel
     @Binding var name: String
-//    @Binding var isAuthenticated: Bool?
+    @Binding var isValid: Bool?
     @Binding var showPassword: Bool
     var body: some View {
         if !showPassword{
@@ -132,7 +156,7 @@ struct PasswordTextView: View{
                     .padding()
                     .background(Color.background)
                     .cornerRadius(16)
-                    .shadow(color: .borderColor(condition: vm.authenticated), radius: 2, x: 0.0, y: 0.0)
+                    .shadow(color: .borderColor(condition: isValid), radius: 2, x: 0.0, y: 0.0)
                     .disableAutocorrection(true)
                     .autocapitalization(.none)
                 Button(action:{
@@ -146,7 +170,7 @@ struct PasswordTextView: View{
             }
         } else {
             HStack {
-                LoginTextView(name: $name)
+                LoginTextView(name: $name,isValid: $vm.isValidable)
                 Button(action:{showPassword.toggle()}){
                     Image(systemName: "eye.slash")
                         .imageScale(.large)

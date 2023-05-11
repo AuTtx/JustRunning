@@ -74,16 +74,16 @@ struct PersonInfo: View{
             }
             .padding()
             VStack(alignment: .leading) {
-//                Text("\(vm.currentUser.name ?? "用户名未设置") ")
-                Text("current失败")
+                Text("\(vm.currentUser.name ?? "用户名未设置") ")
+//                Text("current失败")
                     .font(.title2)
                     .bold()
-//                Text("\(vm.currentUser.email ?? "邮箱未设置")")
-                Text("current失败")
+                Text("\(vm.currentUser.email ?? "邮箱未设置")")
+//                Text("current失败")
                     .font(.caption)
                     .foregroundColor(.secondary)
-//                Text("\(vm.currentUser.location ?? "暂未获取地址")")
-                Text("current失败")
+                Text("\(vm.currentUser.location ?? "暂未获取地址")")
+//                Text("current失败")
             }
             Spacer()
         }
@@ -120,6 +120,7 @@ struct Buttons: View{
             .cornerRadius(12)
             .shadow(color: .accentColor.opacity(0.1), radius: 2, x: 0.5, y: 1)
         }
+        
         
         NavigationLink(destination: ZStack {
             Color.background.edgesIgnoringSafeArea(.all)
