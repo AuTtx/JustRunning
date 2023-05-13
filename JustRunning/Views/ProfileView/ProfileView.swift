@@ -14,24 +14,27 @@ import MapKit
 struct ProfileView: View {
     @EnvironmentObject var vm: UserViewmodel
     var body: some View {
-        ZStack{
-            Color.background.edgesIgnoringSafeArea(.all)
-            //            Image("背景")
-            //                .resizable()
-            //                .scaledToFit()
-            //                .edgesIgnoringSafeArea(.all)
-            VStack(alignment: .center){
-                PersonInfo(vm: vm)
-                    .padding(.bottom)
-                Divider()
-                Buttons(vm: vm)
-                Spacer()
-                //MapView
-                Spacer()
+        NavigationView{
+            ZStack{
+                Color.background.edgesIgnoringSafeArea(.all)
+                //            Image("背景")
+                //                .resizable()
+                //                .scaledToFit()
+                //                .edgesIgnoringSafeArea(.all)
+                VStack(alignment: .center){
+                    PersonInfo(vm: vm)
+                        .padding(.bottom)
+                    Divider()
+                    Buttons(vm: vm)
+                    Spacer()
+                    //MapView
+                    Spacer()
+                }
+                .padding()
+                .navigationBarTitleDisplayMode(.inline)
             }
-            .padding()
-            .navigationBarTitleDisplayMode(.inline)
-        }
+        }.background(Color.secondaryBackground)
+            .shadow(color: .accentColor.opacity(0.1), radius: 2, x: 0.5, y: 1)
     }
 }
 
@@ -110,18 +113,21 @@ struct Buttons: View{
             .shadow(color: .accentColor.opacity(0.1), radius: 2, x: 0.5, y: 1)
         }
         
+        
             NavigationLink(
                 destination: UserInfoView(),
                 label: {
                     HStack {
                         Image(systemName: "person.fill")
-                        Text("个人信息")
+                        Text("编辑信息")
                     }.font(.headline)
                         .padding()
                         .background(Color.secondaryBackground)
                         .cornerRadius(12)
                         .shadow(color: .accentColor.opacity(0.1), radius: 2, x: 0.5, y: 1)
                 })
+        
+            
         
         NavigationLink(destination: ZStack {
             Color.background.edgesIgnoringSafeArea(.all)

@@ -12,11 +12,19 @@ struct RunningView: View {
     @StateObject private var vm = MapViewModel()
     @State private var trackingMode: MapUserTrackingMode = .follow
     var body: some View{
-        Map(coordinateRegion: $vm.region,showsUserLocation: true,userTrackingMode: $trackingMode)
-            .ignoresSafeArea()
-            .frame(width: 350,height: 120)
-            .cornerRadius(30)
-            .padding(.top, 50)
+        VStack{
+            VStack(spacing: 0){
+                Map(coordinateRegion: $vm.region,showsUserLocation: true,userTrackingMode: $trackingMode)
+                    .ignoresSafeArea()
+                    .frame(width: 350,height: 140)
+                    .cornerRadius(30)
+                    .padding(.top, 50)
+                CountDownView().environmentObject(CountdownModel())
+            }
+        }.ignoresSafeArea()
+        
+        
+
     }
 }
 

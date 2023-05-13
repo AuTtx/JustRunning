@@ -16,6 +16,15 @@
 		472CB1762A0E76D5001A9E1A /* MapViewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472CB1752A0E76D5001A9E1A /* MapViewmodel.swift */; };
 		473EAA5D2A03FDF500FC1AA0 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473EAA5B2A03FDF500FC1AA0 /* ImageLoader.swift */; };
 		473EAA5E2A03FDF500FC1AA0 /* Bundle+LoadAndDecode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473EAA5C2A03FDF500FC1AA0 /* Bundle+LoadAndDecode.swift */; };
+		479F99A02A0FF8AB00077EC3 /* Binding+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479F999F2A0FF8AB00077EC3 /* Binding+Ext.swift */; };
+		479F99A32A0FF8DB00077EC3 /* CountdownModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479F99A12A0FF8DB00077EC3 /* CountdownModel.swift */; };
+		479F99A42A0FF8DB00077EC3 /* SystemSounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479F99A22A0FF8DB00077EC3 /* SystemSounds.swift */; };
+		479F99A92A0FF91100077EC3 /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479F99A62A0FF91100077EC3 /* ClockView.swift */; };
+		479F99AA2A0FF91100077EC3 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479F99A72A0FF91100077EC3 /* CircularProgressView.swift */; };
+		479F99AB2A0FF91100077EC3 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479F99A82A0FF91100077EC3 /* CircleButton.swift */; };
+		479F99AE2A0FF99700077EC3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479F99AC2A0FF99700077EC3 /* SettingsView.swift */; };
+		479F99AF2A0FF99700077EC3 /* CountDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479F99AD2A0FF99700077EC3 /* CountDownView.swift */; };
+		479F99B12A0FFB0A00077EC3 /* TimerPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479F99B02A0FFB0A00077EC3 /* TimerPickerView.swift */; };
 		47B7D8B62A08150F004B57EB /* UserContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 47B7D8B42A08150F004B57EB /* UserContainer.xcdatamodeld */; };
 		47B7D8B82A0815A7004B57EB /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B7D8B72A0815A7004B57EB /* CoreDataManager.swift */; };
 		47B7D8D42A0CB50C004B57EB /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B7D8D32A0CB50C004B57EB /* UserInfoView.swift */; };
@@ -29,7 +38,6 @@
 		47E58FF32A02917400231D6C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E58FF22A02917400231D6C /* ProfileView.swift */; };
 		47E58FF52A02925E00231D6C /* RunningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E58FF42A02925E00231D6C /* RunningView.swift */; };
 		47E58FF92A0297C800231D6C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E58FF82A0297C800231D6C /* LoginView.swift */; };
-		47E58FFD2A0299A900231D6C /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E58FFC2A0299A900231D6C /* UserModel.swift */; };
 		47E590002A029E1D00231D6C /* Extension+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E58FFF2A029E1D00231D6C /* Extension+Colors.swift */; };
 		47E590032A029EE600231D6C /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E590022A029EE600231D6C /* UserViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -44,6 +52,15 @@
 		472CB1752A0E76D5001A9E1A /* MapViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewmodel.swift; sourceTree = "<group>"; };
 		473EAA5B2A03FDF500FC1AA0 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		473EAA5C2A03FDF500FC1AA0 /* Bundle+LoadAndDecode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+LoadAndDecode.swift"; sourceTree = "<group>"; };
+		479F999F2A0FF8AB00077EC3 /* Binding+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Binding+Ext.swift"; sourceTree = "<group>"; };
+		479F99A12A0FF8DB00077EC3 /* CountdownModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownModel.swift; sourceTree = "<group>"; };
+		479F99A22A0FF8DB00077EC3 /* SystemSounds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemSounds.swift; sourceTree = "<group>"; };
+		479F99A62A0FF91100077EC3 /* ClockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
+		479F99A72A0FF91100077EC3 /* CircularProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		479F99A82A0FF91100077EC3 /* CircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
+		479F99AC2A0FF99700077EC3 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		479F99AD2A0FF99700077EC3 /* CountDownView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountDownView.swift; sourceTree = "<group>"; };
+		479F99B02A0FFB0A00077EC3 /* TimerPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPickerView.swift; sourceTree = "<group>"; };
 		47B7D8B52A08150F004B57EB /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		47B7D8B72A0815A7004B57EB /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		47B7D8D32A0CB50C004B57EB /* UserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
@@ -58,7 +75,6 @@
 		47E58FF22A02917400231D6C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		47E58FF42A02925E00231D6C /* RunningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningView.swift; sourceTree = "<group>"; };
 		47E58FF82A0297C800231D6C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		47E58FFC2A0299A900231D6C /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		47E58FFF2A029E1D00231D6C /* Extension+Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+Colors.swift"; sourceTree = "<group>"; };
 		47E590022A029EE600231D6C /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,8 +131,22 @@
 			isa = PBXGroup;
 			children = (
 				47E58FF42A02925E00231D6C /* RunningView.swift */,
+				479F99A52A0FF90600077EC3 /* CountingDownViews */,
 			);
 			path = RunningViews;
+			sourceTree = "<group>";
+		};
+		479F99A52A0FF90600077EC3 /* CountingDownViews */ = {
+			isa = PBXGroup;
+			children = (
+				479F99AD2A0FF99700077EC3 /* CountDownView.swift */,
+				479F99A82A0FF91100077EC3 /* CircleButton.swift */,
+				479F99AC2A0FF99700077EC3 /* SettingsView.swift */,
+				479F99A62A0FF91100077EC3 /* ClockView.swift */,
+				479F99A72A0FF91100077EC3 /* CircularProgressView.swift */,
+				479F99B02A0FFB0A00077EC3 /* TimerPickerView.swift */,
+			);
+			path = CountingDownViews;
 			sourceTree = "<group>";
 		};
 		47E58FC629FBA32B00231D6C = {
@@ -185,7 +215,8 @@
 			isa = PBXGroup;
 			children = (
 				47B7D8B72A0815A7004B57EB /* CoreDataManager.swift */,
-				47E58FFC2A0299A900231D6C /* UserModel.swift */,
+				479F99A12A0FF8DB00077EC3 /* CountdownModel.swift */,
+				479F99A22A0FF8DB00077EC3 /* SystemSounds.swift */,
 				47B7D8B42A08150F004B57EB /* UserContainer.xcdatamodeld */,
 			);
 			path = Model;
@@ -195,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				473EAA5C2A03FDF500FC1AA0 /* Bundle+LoadAndDecode.swift */,
+				479F999F2A0FF8AB00077EC3 /* Binding+Ext.swift */,
 				473EAA5B2A03FDF500FC1AA0 /* ImageLoader.swift */,
 				47E58FFF2A029E1D00231D6C /* Extension+Colors.swift */,
 				4710C1D42A0632FA00E8B941 /* ImagePicker.swift */,
@@ -288,7 +320,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				479F99B12A0FFB0A00077EC3 /* TimerPickerView.swift in Sources */,
 				473EAA5D2A03FDF500FC1AA0 /* ImageLoader.swift in Sources */,
+				479F99A92A0FF91100077EC3 /* ClockView.swift in Sources */,
+				479F99A32A0FF8DB00077EC3 /* CountdownModel.swift in Sources */,
 				472CB16A2A0D4722001A9E1A /* HomeView.swift in Sources */,
 				472CB1682A0D46D9001A9E1A /* SwiftUIView.swift in Sources */,
 				472CB16D2A0D4CEE001A9E1A /* TimePicker.swift in Sources */,
@@ -297,6 +332,7 @@
 				47B7D8B62A08150F004B57EB /* UserContainer.xcdatamodeld in Sources */,
 				47E58FEA29FBB27500231D6C /* RunningAnimation.swift in Sources */,
 				473EAA5E2A03FDF500FC1AA0 /* Bundle+LoadAndDecode.swift in Sources */,
+				479F99A02A0FF8AB00077EC3 /* Binding+Ext.swift in Sources */,
 				47E58FF12A02915F00231D6C /* MainView.swift in Sources */,
 				47E58FD329FBA32B00231D6C /* JustRunningApp.swift in Sources */,
 				47E590002A029E1D00231D6C /* Extension+Colors.swift in Sources */,
@@ -304,10 +340,14 @@
 				47B7D8B82A0815A7004B57EB /* CoreDataManager.swift in Sources */,
 				47E58FF32A02917400231D6C /* ProfileView.swift in Sources */,
 				47E58FF92A0297C800231D6C /* LoginView.swift in Sources */,
+				479F99A42A0FF8DB00077EC3 /* SystemSounds.swift in Sources */,
 				4710C1D52A0632FA00E8B941 /* ImagePicker.swift in Sources */,
+				479F99AE2A0FF99700077EC3 /* SettingsView.swift in Sources */,
+				479F99AB2A0FF91100077EC3 /* CircleButton.swift in Sources */,
 				472CB1762A0E76D5001A9E1A /* MapViewmodel.swift in Sources */,
 				472CB1652A0D3F02001A9E1A /* CardView.swift in Sources */,
-				47E58FFD2A0299A900231D6C /* UserModel.swift in Sources */,
+				479F99AF2A0FF99700077EC3 /* CountDownView.swift in Sources */,
+				479F99AA2A0FF91100077EC3 /* CircularProgressView.swift in Sources */,
 				472CB16F2A0D4DC1001A9E1A /* AnalysisView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
