@@ -13,6 +13,7 @@
 		472CB16A2A0D4722001A9E1A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472CB1692A0D4722001A9E1A /* HomeView.swift */; };
 		472CB16D2A0D4CEE001A9E1A /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472CB16C2A0D4CEE001A9E1A /* TimePicker.swift */; };
 		472CB16F2A0D4DC1001A9E1A /* AnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472CB16E2A0D4DC1001A9E1A /* AnalysisView.swift */; };
+		472CB1762A0E76D5001A9E1A /* MapViewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472CB1752A0E76D5001A9E1A /* MapViewmodel.swift */; };
 		473EAA5D2A03FDF500FC1AA0 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473EAA5B2A03FDF500FC1AA0 /* ImageLoader.swift */; };
 		473EAA5E2A03FDF500FC1AA0 /* Bundle+LoadAndDecode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473EAA5C2A03FDF500FC1AA0 /* Bundle+LoadAndDecode.swift */; };
 		47B7D8B62A08150F004B57EB /* UserContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 47B7D8B42A08150F004B57EB /* UserContainer.xcdatamodeld */; };
@@ -40,6 +41,7 @@
 		472CB1692A0D4722001A9E1A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		472CB16C2A0D4CEE001A9E1A /* TimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
 		472CB16E2A0D4DC1001A9E1A /* AnalysisView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisView.swift; sourceTree = "<group>"; };
+		472CB1752A0E76D5001A9E1A /* MapViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewmodel.swift; sourceTree = "<group>"; };
 		473EAA5B2A03FDF500FC1AA0 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		473EAA5C2A03FDF500FC1AA0 /* Bundle+LoadAndDecode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+LoadAndDecode.swift"; sourceTree = "<group>"; };
 		47B7D8B52A08150F004B57EB /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -90,6 +92,31 @@
 				472CB16C2A0D4CEE001A9E1A /* TimePicker.swift */,
 			);
 			path = ChartsViews;
+			sourceTree = "<group>";
+		};
+		472CB1702A0E0389001A9E1A /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				47E58FF22A02917400231D6C /* ProfileView.swift */,
+				47B7D8D32A0CB50C004B57EB /* UserInfoView.swift */,
+			);
+			path = ProfileView;
+			sourceTree = "<group>";
+		};
+		472CB1712A0E03B0001A9E1A /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				47E58FF82A0297C800231D6C /* LoginView.swift */,
+			);
+			path = LoginView;
+			sourceTree = "<group>";
+		};
+		472CB1722A0E03BF001A9E1A /* RunningViews */ = {
+			isa = PBXGroup;
+			children = (
+				47E58FF42A02925E00231D6C /* RunningView.swift */,
+			);
+			path = RunningViews;
 			sourceTree = "<group>";
 		};
 		47E58FC629FBA32B00231D6C = {
@@ -144,13 +171,12 @@
 		47E58FFA2A02982000231D6C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				47E58FF02A02915F00231D6C /* MainView.swift */,
+				472CB1722A0E03BF001A9E1A /* RunningViews */,
+				472CB1712A0E03B0001A9E1A /* LoginView */,
+				472CB1702A0E0389001A9E1A /* ProfileView */,
 				472CB16B2A0D4CD8001A9E1A /* ChartsViews */,
 				472CB1662A0D46C8001A9E1A /* HomeView */,
-				47E58FF02A02915F00231D6C /* MainView.swift */,
-				47E58FF22A02917400231D6C /* ProfileView.swift */,
-				47E58FF42A02925E00231D6C /* RunningView.swift */,
-				47E58FF82A0297C800231D6C /* LoginView.swift */,
-				47B7D8D32A0CB50C004B57EB /* UserInfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -180,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				47E590022A029EE600231D6C /* UserViewModel.swift */,
+				472CB1752A0E76D5001A9E1A /* MapViewmodel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -278,6 +305,7 @@
 				47E58FF32A02917400231D6C /* ProfileView.swift in Sources */,
 				47E58FF92A0297C800231D6C /* LoginView.swift in Sources */,
 				4710C1D52A0632FA00E8B941 /* ImagePicker.swift in Sources */,
+				472CB1762A0E76D5001A9E1A /* MapViewmodel.swift in Sources */,
 				472CB1652A0D3F02001A9E1A /* CardView.swift in Sources */,
 				47E58FFD2A0299A900231D6C /* UserModel.swift in Sources */,
 				472CB16F2A0D4DC1001A9E1A /* AnalysisView.swift in Sources */,
@@ -414,6 +442,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = JustRunning/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Would like to use camera to take photos?";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to show it on the map";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -445,6 +474,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = JustRunning/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Would like to use camera to take photos?";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to show it on the map";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
