@@ -13,14 +13,17 @@ class UserViewmodel: ObservableObject{
     @AppStorage("AUTH_KEY") var authenticated = false {
         willSet{ objectWillChange.send() }
     }
+    @AppStorage("AUTH_USERNAME") var authUserName = "" {
+        willSet{ objectWillChange.send() }
+    }
     @Published var isValidable: Bool? = nil
     //    var username: String = ""
     //    var password: String = ""
-    var name: String = ""
-    var gender: String = ""
-    var email: String = ""
-    var location: String = ""
-    var phoneNubmer: String = ""
+    @Published var name: String = ""
+    @Published var gender: String = ""
+    @Published var email: String = ""
+    @Published var location: String = ""
+    @Published var phoneNubmer: String = ""
     @State private var showPassword: Bool = false
     
     let manager = CoreDataManager.instance
@@ -29,9 +32,10 @@ class UserViewmodel: ObservableObject{
     
     init(){
         currentUser = UserEntity(context: manager.context)
-        currentUser.username = "CURRENTUSER"
-        currentUser.password = "CURRENTUSER"
+        currentUser.username = ""
+        currentUser.password = ""
         getUsers()
+        currentUser = enableCurrentUser()
     }
     
     func getUsers(){
@@ -51,12 +55,38 @@ class UserViewmodel: ObservableObject{
         }
     }
     
-    func editUserInCoredata(user: UserEntity){
-        user.name = name
-        user.gender = gender
-        user.email = email
-        user.phoneNumber = phoneNubmer
-        user.location = location
+    func editUserInCoredata(){
+        currentUser.name = name
+        currentUser.gender = gender
+        currentUser.email = email
+        currentUser.phoneNumber = phoneNubmer
+        currentUser.location = location
+    }
+    
+    func editUserInCoredata(name: String, gender: String, email: String, phoneNumber: String, location: String){
+        currentUser.name = name
+        currentUser.gender = gender
+        currentUser.email = email
+        currentUser.phoneNumber = phoneNumber
+        currentUser.location = location
+        
+        self.name = name
+        self.gender = gender
+        self.email = email
+        self.phoneNubmer = phoneNumber
+        self.location = location
+        save()
+    }
+    
+    
+    
+    func enableCurrentUser() -> UserEntity{
+        if let fetchCurrentUser = getSpecifiedUser(with: authUserName, users: users){
+            return fetchCurrentUser
+        }else{
+            print("更新currentUser失败")
+            return currentUser
+        }
     }
     
     func addUserInCoreData(username: String, password: String, users: [UserEntity]){
@@ -89,6 +119,7 @@ class UserViewmodel: ObservableObject{
     func save(){
         manager.save()
         getUsers()
+        currentUser = enableCurrentUser()
     }
     
     func getSpecifiedUser(with username: String, users: [UserEntity]) -> UserEntity?{
@@ -106,24 +137,6 @@ class UserViewmodel: ObservableObject{
         }
         return nil
     }
-//    func getSpecifiedUser(with username: String, users: [UserEntity]) -> UserEntity?{
-//        print("当前查找的账号是：\(username)")
-//        print("查找的账号个数为\(users.count)")
-//        for item in users{
-//            print("账号是\(item.username)")
-//            print("密码是\(item.password)")
-//            if item.username == username{
-//                print("找到的账号为\(String(describing: item.username))")
-//                return item
-//            }else{
-//                print("找不到\(username)")
-//                return nil
-//            }
-//        }
-//        return nil
-//    }
-    
-    
     
     
     //MARK: - Intent(s) -LoginView
@@ -137,6 +150,7 @@ class UserViewmodel: ObservableObject{
                 currentUser = theLogginUser
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1){
                     self.authenticated = true
+                    self.authUserName = username
                 }
             }else{
                 print("用户名或密码错误")

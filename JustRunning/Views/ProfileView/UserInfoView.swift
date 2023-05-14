@@ -36,7 +36,7 @@ struct UserInfoView: View {
                     TextField("邮箱", text: $email)
                 }
                 Section{
-                    Button(action: { vm.editUser()})
+                    Button(action: { vm.editUserInCoredata(name: name, gender: gender, email: email, phoneNumber: phoneNumber, location: location)})
                     {
                         Text("保存")
                             .font(.headline)
@@ -46,8 +46,8 @@ struct UserInfoView: View {
                             .cornerRadius(10)
                     }
                 }
+                
             }.navigationTitle("编辑资料")
-            
         }
         
         

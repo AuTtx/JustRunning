@@ -72,16 +72,18 @@ struct LoginView: View {
                             .padding(8)
                             .sheet(isPresented: $showSheet){
                                 ScrollView{
-                                    Text("共有\(vm.users.count)个账户")
+                                    Text("该设备上的所有账号")
                                         .bold()
                                     ForEach(vm.users){ user in
-                                        HStack {
-                                            VStack(alignment: .leading, spacing: 6) {
-                                                Text(user.username!)
-                                                    .bold()
-                                                Text(user.password!)
-                                                    .bold()
-                                                Divider().bold()
+                                        if user.username != ""{
+                                            HStack {
+                                                VStack(alignment: .leading, spacing: 6) {
+                                                    Text(user.username!)
+                                                        .bold()
+                                                    Text(user.password!)
+                                                        .bold()
+                                                    Divider().bold()
+                                                }
                                             }
                                         }
                                     }
