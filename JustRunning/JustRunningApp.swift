@@ -11,7 +11,8 @@ import SwiftUI
 struct JustRunningApp: App {
     var body: some Scene {
         WindowGroup {
-           LoginView().environmentObject(UserViewmodel())
+            LoginView().environmentObject(UserViewmodel())
+//                .environmentObject(ViewModel())
         }
     }
 }

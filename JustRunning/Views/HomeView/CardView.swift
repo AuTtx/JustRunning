@@ -9,7 +9,8 @@ import SwiftUI
 
 struct CardView: View {
     @State var isSelected: Bool = false
-
+    var color = #colorLiteral(red: 0.3526380062, green: 0.6078233123, blue: 0.9825491309, alpha: 1)
+    
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -63,7 +64,7 @@ struct CardView: View {
         }
         .frame(width: 150, height: 180)
         .padding(8)
-        .background(Color(isSelected ? #colorLiteral(red: 0.3097526431, green: 0.3843510449, blue: 0.7528470159, alpha: 1) : .white))
+        .background(Color(isSelected ? color : .white))
         .cornerRadius(20)
     }
 }

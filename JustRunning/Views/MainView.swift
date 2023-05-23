@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
+//    @EnvironmentObject var vmRunning: ViewModel
     var body: some View {
         TabView{
             HomeView()
@@ -16,6 +17,7 @@ struct MainView: View {
                     Text("主页")
             }
             RunningView()
+                .environmentObject(ViewModel())
                 .tabItem{
                     Image(systemName: "figure.run")
                     Text("跑步")
@@ -29,9 +31,9 @@ struct MainView: View {
         .edgesIgnoringSafeArea(.all)
     }
 }
-
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainView()
-    }
-}
+//
+//struct MainView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MainView()
+//    }
+//}

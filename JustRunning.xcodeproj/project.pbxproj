@@ -9,13 +9,28 @@
 /* Begin PBXBuildFile section */
 		4710C1D52A0632FA00E8B941 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4710C1D42A0632FA00E8B941 /* ImagePicker.swift */; };
 		472CB1652A0D3F02001A9E1A /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472CB1642A0D3F02001A9E1A /* CardView.swift */; };
-		472CB1682A0D46D9001A9E1A /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472CB1672A0D46D9001A9E1A /* SwiftUIView.swift */; };
+		472CB1682A0D46D9001A9E1A /* CardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472CB1672A0D46D9001A9E1A /* CardListView.swift */; };
 		472CB16A2A0D4722001A9E1A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472CB1692A0D4722001A9E1A /* HomeView.swift */; };
 		472CB16D2A0D4CEE001A9E1A /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472CB16C2A0D4CEE001A9E1A /* TimePicker.swift */; };
 		472CB16F2A0D4DC1001A9E1A /* AnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472CB16E2A0D4DC1001A9E1A /* AnalysisView.swift */; };
 		472CB1762A0E76D5001A9E1A /* MapViewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472CB1752A0E76D5001A9E1A /* MapViewmodel.swift */; };
 		473EAA5D2A03FDF500FC1AA0 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473EAA5B2A03FDF500FC1AA0 /* ImageLoader.swift */; };
 		473EAA5E2A03FDF500FC1AA0 /* Bundle+LoadAndDecode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473EAA5C2A03FDF500FC1AA0 /* Bundle+LoadAndDecode.swift */; };
+		478AC86C2A1CEA8900D51B1A /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478AC86B2A1CEA8900D51B1A /* ImageView.swift */; };
+		478AC86E2A1CEB0200D51B1A /* ImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478AC86D2A1CEB0200D51B1A /* ImageView+Extension.swift */; };
+		478AC8702A1CEB3200D51B1A /* ButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478AC86F2A1CEB3200D51B1A /* ButtonLabel.swift */; };
+		478AC8722A1CEB4100D51B1A /* ImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478AC8712A1CEB4100D51B1A /* ImageViewModel.swift */; };
+		478AC8772A1CEB7100D51B1A /* MyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478AC8742A1CEB7100D51B1A /* MyImage.swift */; };
+		478AC8792A1CEB7100D51B1A /* MyImageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478AC8762A1CEB7100D51B1A /* MyImageError.swift */; };
+		478AC87B2A1CEB8200D51B1A /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478AC87A2A1CEB8200D51B1A /* FileManager+Extension.swift */; };
+		478AC8802A1CEB9200D51B1A /* ZoomableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478AC87E2A1CEB9200D51B1A /* ZoomableScrollView.swift */; };
+		478AC8822A1CECE700D51B1A /* ImagePickerRunning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478AC8812A1CECE700D51B1A /* ImagePickerRunning.swift */; };
+		478AC8842A1CED4000D51B1A /* PickerRunning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478AC8832A1CED4000D51B1A /* PickerRunning.swift */; };
+		478AC8862A1CF37A00D51B1A /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478AC8852A1CF37A00D51B1A /* WeatherView.swift */; };
+		4797FF1D2A1D2B640091D434 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4797FF1C2A1D2B640091D434 /* TimerView.swift */; };
+		4797FF1F2A1D39D20091D434 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4797FF1E2A1D39D20091D434 /* ChartView.swift */; };
+		4797FF212A1D3A370091D434 /* RunningData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4797FF202A1D3A370091D434 /* RunningData.swift */; };
+		4797FF232A1D3EC00091D434 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4797FF222A1D3EC00091D434 /* Utils.swift */; };
 		479F99A02A0FF8AB00077EC3 /* Binding+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479F999F2A0FF8AB00077EC3 /* Binding+Ext.swift */; };
 		479F99A32A0FF8DB00077EC3 /* CountdownModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479F99A12A0FF8DB00077EC3 /* CountdownModel.swift */; };
 		479F99A42A0FF8DB00077EC3 /* SystemSounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479F99A22A0FF8DB00077EC3 /* SystemSounds.swift */; };
@@ -45,13 +60,28 @@
 /* Begin PBXFileReference section */
 		4710C1D42A0632FA00E8B941 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		472CB1642A0D3F02001A9E1A /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		472CB1672A0D46D9001A9E1A /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		472CB1672A0D46D9001A9E1A /* CardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListView.swift; sourceTree = "<group>"; };
 		472CB1692A0D4722001A9E1A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		472CB16C2A0D4CEE001A9E1A /* TimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
 		472CB16E2A0D4DC1001A9E1A /* AnalysisView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisView.swift; sourceTree = "<group>"; };
 		472CB1752A0E76D5001A9E1A /* MapViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewmodel.swift; sourceTree = "<group>"; };
 		473EAA5B2A03FDF500FC1AA0 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		473EAA5C2A03FDF500FC1AA0 /* Bundle+LoadAndDecode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+LoadAndDecode.swift"; sourceTree = "<group>"; };
+		478AC86B2A1CEA8900D51B1A /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		478AC86D2A1CEB0200D51B1A /* ImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+Extension.swift"; sourceTree = "<group>"; };
+		478AC86F2A1CEB3200D51B1A /* ButtonLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonLabel.swift; sourceTree = "<group>"; };
+		478AC8712A1CEB4100D51B1A /* ImageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewModel.swift; sourceTree = "<group>"; };
+		478AC8742A1CEB7100D51B1A /* MyImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyImage.swift; sourceTree = "<group>"; };
+		478AC8762A1CEB7100D51B1A /* MyImageError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyImageError.swift; sourceTree = "<group>"; };
+		478AC87A2A1CEB8200D51B1A /* FileManager+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
+		478AC87E2A1CEB9200D51B1A /* ZoomableScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomableScrollView.swift; sourceTree = "<group>"; };
+		478AC8812A1CECE700D51B1A /* ImagePickerRunning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerRunning.swift; sourceTree = "<group>"; };
+		478AC8832A1CED4000D51B1A /* PickerRunning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerRunning.swift; sourceTree = "<group>"; };
+		478AC8852A1CF37A00D51B1A /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		4797FF1C2A1D2B640091D434 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		4797FF1E2A1D39D20091D434 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		4797FF202A1D3A370091D434 /* RunningData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningData.swift; sourceTree = "<group>"; };
+		4797FF222A1D3EC00091D434 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		479F999F2A0FF8AB00077EC3 /* Binding+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Binding+Ext.swift"; sourceTree = "<group>"; };
 		479F99A12A0FF8DB00077EC3 /* CountdownModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownModel.swift; sourceTree = "<group>"; };
 		479F99A22A0FF8DB00077EC3 /* SystemSounds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemSounds.swift; sourceTree = "<group>"; };
@@ -96,7 +126,7 @@
 			children = (
 				472CB16E2A0D4DC1001A9E1A /* AnalysisView.swift */,
 				472CB1642A0D3F02001A9E1A /* CardView.swift */,
-				472CB1672A0D46D9001A9E1A /* SwiftUIView.swift */,
+				472CB1672A0D46D9001A9E1A /* CardListView.swift */,
 				472CB1692A0D4722001A9E1A /* HomeView.swift */,
 			);
 			path = HomeView;
@@ -106,6 +136,9 @@
 			isa = PBXGroup;
 			children = (
 				472CB16C2A0D4CEE001A9E1A /* TimePicker.swift */,
+				4797FF222A1D3EC00091D434 /* Utils.swift */,
+				4797FF1E2A1D39D20091D434 /* ChartView.swift */,
+				4797FF202A1D3A370091D434 /* RunningData.swift */,
 			);
 			path = ChartsViews;
 			sourceTree = "<group>";
@@ -115,6 +148,7 @@
 			children = (
 				47E58FF22A02917400231D6C /* ProfileView.swift */,
 				47B7D8D32A0CB50C004B57EB /* UserInfoView.swift */,
+				478AC8852A1CF37A00D51B1A /* WeatherView.swift */,
 			);
 			path = ProfileView;
 			sourceTree = "<group>";
@@ -132,8 +166,46 @@
 			children = (
 				47E58FF42A02925E00231D6C /* RunningView.swift */,
 				479F99A52A0FF90600077EC3 /* CountingDownViews */,
+				4797FF1B2A1D2B510091D434 /* TimerView */,
 			);
 			path = RunningViews;
+			sourceTree = "<group>";
+		};
+		478AC86A2A1CEA7300D51B1A /* MyImagesViews */ = {
+			isa = PBXGroup;
+			children = (
+				478AC86B2A1CEA8900D51B1A /* ImageView.swift */,
+				478AC86D2A1CEB0200D51B1A /* ImageView+Extension.swift */,
+				478AC86F2A1CEB3200D51B1A /* ButtonLabel.swift */,
+			);
+			path = MyImagesViews;
+			sourceTree = "<group>";
+		};
+		478AC8732A1CEB5B00D51B1A /* MyImagesModels */ = {
+			isa = PBXGroup;
+			children = (
+				478AC8832A1CED4000D51B1A /* PickerRunning.swift */,
+				478AC8742A1CEB7100D51B1A /* MyImage.swift */,
+				478AC8762A1CEB7100D51B1A /* MyImageError.swift */,
+			);
+			path = MyImagesModels;
+			sourceTree = "<group>";
+		};
+		478AC87C2A1CEB9200D51B1A /* UIViewRepresentables */ = {
+			isa = PBXGroup;
+			children = (
+				478AC8812A1CECE700D51B1A /* ImagePickerRunning.swift */,
+				478AC87E2A1CEB9200D51B1A /* ZoomableScrollView.swift */,
+			);
+			path = UIViewRepresentables;
+			sourceTree = "<group>";
+		};
+		4797FF1B2A1D2B510091D434 /* TimerView */ = {
+			isa = PBXGroup;
+			children = (
+				4797FF1C2A1D2B640091D434 /* TimerView.swift */,
+			);
+			path = TimerView;
 			sourceTree = "<group>";
 		};
 		479F99A52A0FF90600077EC3 /* CountingDownViews */ = {
@@ -172,8 +244,9 @@
 				47E58FE829FBB24900231D6C /* LottieFiles */,
 				47E590012A029EC000231D6C /* ViewModels */,
 				47E58FFE2A029E0E00231D6C /* Extensions */,
-				47E58FFB2A02999400231D6C /* Model */,
+				47E58FFB2A02999400231D6C /* Models */,
 				47E58FFA2A02982000231D6C /* Views */,
+				478AC87C2A1CEB9200D51B1A /* UIViewRepresentables */,
 				47E58FEF29FC10F000231D6C /* Info.plist */,
 				47E58FD629FBA32D00231D6C /* Assets.xcassets */,
 				47E58FD829FBA32D00231D6C /* Preview Content */,
@@ -202,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				47E58FF02A02915F00231D6C /* MainView.swift */,
+				478AC86A2A1CEA7300D51B1A /* MyImagesViews */,
 				472CB1722A0E03BF001A9E1A /* RunningViews */,
 				472CB1712A0E03B0001A9E1A /* LoginView */,
 				472CB1702A0E0389001A9E1A /* ProfileView */,
@@ -211,15 +285,16 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		47E58FFB2A02999400231D6C /* Model */ = {
+		47E58FFB2A02999400231D6C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				478AC8732A1CEB5B00D51B1A /* MyImagesModels */,
 				47B7D8B72A0815A7004B57EB /* CoreDataManager.swift */,
 				479F99A12A0FF8DB00077EC3 /* CountdownModel.swift */,
 				479F99A22A0FF8DB00077EC3 /* SystemSounds.swift */,
 				47B7D8B42A08150F004B57EB /* UserContainer.xcdatamodeld */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		47E58FFE2A029E0E00231D6C /* Extensions */ = {
@@ -229,6 +304,7 @@
 				479F999F2A0FF8AB00077EC3 /* Binding+Ext.swift */,
 				473EAA5B2A03FDF500FC1AA0 /* ImageLoader.swift */,
 				47E58FFF2A029E1D00231D6C /* Extension+Colors.swift */,
+				478AC87A2A1CEB8200D51B1A /* FileManager+Extension.swift */,
 				4710C1D42A0632FA00E8B941 /* ImagePicker.swift */,
 			);
 			path = Extensions;
@@ -239,6 +315,7 @@
 			children = (
 				47E590022A029EE600231D6C /* UserViewModel.swift */,
 				472CB1752A0E76D5001A9E1A /* MapViewmodel.swift */,
+				478AC8712A1CEB4100D51B1A /* ImageViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -320,14 +397,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				478AC8822A1CECE700D51B1A /* ImagePickerRunning.swift in Sources */,
+				478AC86E2A1CEB0200D51B1A /* ImageView+Extension.swift in Sources */,
+				478AC8842A1CED4000D51B1A /* PickerRunning.swift in Sources */,
+				478AC86C2A1CEA8900D51B1A /* ImageView.swift in Sources */,
 				479F99B12A0FFB0A00077EC3 /* TimerPickerView.swift in Sources */,
 				473EAA5D2A03FDF500FC1AA0 /* ImageLoader.swift in Sources */,
 				479F99A92A0FF91100077EC3 /* ClockView.swift in Sources */,
+				4797FF232A1D3EC00091D434 /* Utils.swift in Sources */,
 				479F99A32A0FF8DB00077EC3 /* CountdownModel.swift in Sources */,
 				472CB16A2A0D4722001A9E1A /* HomeView.swift in Sources */,
-				472CB1682A0D46D9001A9E1A /* SwiftUIView.swift in Sources */,
+				478AC8802A1CEB9200D51B1A /* ZoomableScrollView.swift in Sources */,
+				472CB1682A0D46D9001A9E1A /* CardListView.swift in Sources */,
+				478AC8792A1CEB7100D51B1A /* MyImageError.swift in Sources */,
+				478AC87B2A1CEB8200D51B1A /* FileManager+Extension.swift in Sources */,
+				478AC8702A1CEB3200D51B1A /* ButtonLabel.swift in Sources */,
 				472CB16D2A0D4CEE001A9E1A /* TimePicker.swift in Sources */,
+				478AC8862A1CF37A00D51B1A /* WeatherView.swift in Sources */,
 				47E58FF52A02925E00231D6C /* RunningView.swift in Sources */,
+				4797FF1F2A1D39D20091D434 /* ChartView.swift in Sources */,
 				47B7D8D42A0CB50C004B57EB /* UserInfoView.swift in Sources */,
 				47B7D8B62A08150F004B57EB /* UserContainer.xcdatamodeld in Sources */,
 				47E58FEA29FBB27500231D6C /* RunningAnimation.swift in Sources */,
@@ -342,12 +430,16 @@
 				47E58FF92A0297C800231D6C /* LoginView.swift in Sources */,
 				479F99A42A0FF8DB00077EC3 /* SystemSounds.swift in Sources */,
 				4710C1D52A0632FA00E8B941 /* ImagePicker.swift in Sources */,
+				478AC8722A1CEB4100D51B1A /* ImageViewModel.swift in Sources */,
 				479F99AE2A0FF99700077EC3 /* SettingsView.swift in Sources */,
+				478AC8772A1CEB7100D51B1A /* MyImage.swift in Sources */,
 				479F99AB2A0FF91100077EC3 /* CircleButton.swift in Sources */,
 				472CB1762A0E76D5001A9E1A /* MapViewmodel.swift in Sources */,
 				472CB1652A0D3F02001A9E1A /* CardView.swift in Sources */,
 				479F99AF2A0FF99700077EC3 /* CountDownView.swift in Sources */,
 				479F99AA2A0FF91100077EC3 /* CircularProgressView.swift in Sources */,
+				4797FF1D2A1D2B640091D434 /* TimerView.swift in Sources */,
+				4797FF212A1D3A370091D434 /* RunningData.swift in Sources */,
 				472CB16F2A0D4DC1001A9E1A /* AnalysisView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
