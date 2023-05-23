@@ -9,7 +9,7 @@ If all goes well, the following features will be included:
   5. Basic login, profile UI
   6. Photo punch function
 ## To-do
-  1. ～～finish camera and photo function～～
+  1. ~~finish camera and photo function~~
   2. store the running data in CoreDate according to the user
   3. handle "the center of the mapView isn't located on the user location"
   4. draw polyline of the user's movement
