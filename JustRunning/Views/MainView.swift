@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct MainView: View {
-//    @EnvironmentObject var vmRunning: ViewModel
+    @EnvironmentObject var vmRunning: ViewModel
+    @EnvironmentObject var cm: CountdownModel
     var body: some View {
         TabView{
             HomeView()
@@ -17,7 +18,7 @@ struct MainView: View {
                     Text("主页")
             }
             RunningView()
-                .environmentObject(ViewModel())
+                .environmentObject(vmRunning).environmentObject(cm)
                 .tabItem{
                     Image(systemName: "figure.run")
                     Text("跑步")

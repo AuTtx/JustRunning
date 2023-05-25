@@ -4,16 +4,14 @@
 //
 //  Created by 许智尧 on 2023/5/3.
 
-//
-//AppStorage 完成了。 logout 退不出去；动画不显示问题；输入错误的提示；数据库连接？；Apple ID/qq登陆？
-//
 
 import SwiftUI
 import CoreData
 
 struct LoginView: View {
     @EnvironmentObject var vm: UserViewmodel
-    
+    @EnvironmentObject var cm: CountdownModel
+    @EnvironmentObject var vmRunning: ViewModel
     @State private var showPassword: Bool = false
     @State private var showSheet: Bool = false
     @State private var username: String = ""
@@ -21,7 +19,7 @@ struct LoginView: View {
     
     var body: some View {
         if vm.authenticated{
-            MainView()
+            MainView().environmentObject(vmRunning).environmentObject(cm)
         }else{
             ZStack{
                 Color.background.edgesIgnoringSafeArea(.all)

@@ -10,14 +10,14 @@ import Charts
 
 struct ChartView1: View {
     let data: [LocationData.Series]
-    let bestSales: (city: String, weekday: Date, sales: Int)
+    let bestSales: (city: String, weekday: Date, dis: Int)
 
     var body: some View {
         Chart(data) { series in
-            ForEach(series.sales, id: \.weekday) { element in
+            ForEach(series.dis, id: \.weekday) { element in
                 LineMark(
                     x: .value("Day", element.weekday, unit: .day),
-                    y: .value("Sales", element.sales)
+                    y: .value("dis", element.dis)
                 )
             }
             .foregroundStyle(by: .value("City", series.city))
@@ -25,12 +25,12 @@ struct ChartView1: View {
             .interpolationMethod(.catmullRom)
         }
         .chartForegroundStyleScale([
-            "San Francisco": .purple,
-            "Cupertino": .green
+            "白天": .purple,
+            "晚上": .green
         ])
         .chartSymbolScale([
-            "San Francisco": Circle().strokeBorder(lineWidth: 2),
-            "Cupertino": Square().strokeBorder(lineWidth: 2)
+            "白天": Circle().strokeBorder(lineWidth: 2),
+            "晚上": Square().strokeBorder(lineWidth: 2)
         ])
         .chartXAxis {
             AxisMarks(values: .stride(by: .day)) { _ in
@@ -88,7 +88,7 @@ struct Square: ChartSymbolShape, InsettableShape {
 struct LocationsDetails: View {
     @State private var timeRange: TimeRange = .last30Days
 
-    var bestSales: (city: String, weekday: Date, sales: Int) {
+    var bestSales: (city: String, weekday: Date, dis: Int) {
         switch timeRange {
         case .last30Days:
             return LocationData.last30DaysBest
@@ -107,7 +107,7 @@ struct LocationsDetails: View {
     }
 
     var descriptionText: Text {
-        let sales = bestSales.sales.formatted(.number)
+        let sales = bestSales.dis.formatted(.number)
         let weekday = bestSales.weekday.formatted(.dateTime.weekday(.wide))
         let city = bestSales.city
         let time: String
@@ -117,7 +117,7 @@ struct LocationsDetails: View {
         case .last12Months:
             time = "12 months"
         }
-        return Text("On average, \(sales) pancakes were sold on \(weekday)s in \(city) in the past \(time).")
+        return Text("此表为用模拟数据根据日期和跑步时间段生成的运动变化曲线")
     }
 
     var body: some View {
@@ -126,11 +126,11 @@ struct LocationsDetails: View {
                 TimeRangePicker(value: $timeRange)
                     .padding(.bottom)
 
-                Text("Day + Location With Most Sales")
+                Text("根据跑步时间段（白天/黑夜）")
                     .font(.callout)
                     .foregroundStyle(.secondary)
 
-                Text("Sundays in San Francisco")
+                Text("每日跑步路程的变化曲线")
                     .font(.title2.bold())
 
                 ChartView1(data: data, bestSales: bestSales)

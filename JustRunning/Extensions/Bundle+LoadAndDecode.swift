@@ -1,9 +1,4 @@
-//
-//  Bundle+LoadAndDecode.swift
-//  ModerneShopping
-//
-//  Created by Djallil Elkebir on 2021-09-01.
-//
+
 
 import Foundation
 

@@ -163,22 +163,19 @@ struct ProfileView: View {
         //    @EnvironmentObject var vm: UserViewmodel
         let vm: UserViewmodel
         var body: some View{
-            NavigationLink(destination: ZStack {
-                Color.background.edgesIgnoringSafeArea(.all)
-                Text("Update Account")
-            }){
-                HStack {
-                    Image(systemName: "slider.horizontal.3")
-                    Text("查看运动记录")
-                    
-                }.font(.headline)
-                    .padding()
-                    .background(Color.secondaryBackground)
-                    .cornerRadius(12)
-                    .shadow(color: .accentColor.opacity(0.1), radius: 2, x: 0.5, y: 1)
-            }
-            
-            
+            NavigationLink(
+                destination:AnalysisView(),
+                label: {
+                    HStack {
+                        Image(systemName: "slider.horizontal.3")
+                        Text("查看运动记录")
+                        
+                    }.font(.headline)
+                        .padding()
+                        .background(Color.secondaryBackground)
+                        .cornerRadius(12)
+                        .shadow(color: .accentColor.opacity(0.1), radius: 2, x: 0.5, y: 1)
+                           })
             NavigationLink(
                 destination: UserInfoView(),
                 label: {
@@ -196,7 +193,7 @@ struct ProfileView: View {
             
             NavigationLink(destination: ZStack {
                 Color.background.edgesIgnoringSafeArea(.all)
-                Text("Orders")
+                Text("这里是设置界面")
             }){
                 HStack {
                     Image(systemName: "gearshape.fill")

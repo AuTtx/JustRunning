@@ -1,10 +1,5 @@
 //
 //  ViewModel.swift
-//  ViewModel
-//
-//  Created by Stewart Lynch on 2021-08-15.
-//
-
 import SwiftUI
 
 class ViewModel: ObservableObject {

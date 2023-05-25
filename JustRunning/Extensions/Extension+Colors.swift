@@ -1,9 +1,4 @@
-//
-//  Extension+Colors.swift
-//  ModerneShopping
-//
-//  Created by Djallil Elkebir on 2021-09-03.
-//
+
 
 import SwiftUI
 

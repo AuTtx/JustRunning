@@ -1,10 +1,3 @@
-//
-//  Picker.swift
-//  Picker
-//
-//  Created by Stewart Lynch on 2021-08-15.
-//
-
 import SwiftUI
 import AVFoundation
 

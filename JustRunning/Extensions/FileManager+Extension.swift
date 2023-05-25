@@ -1,9 +1,3 @@
-//
-//  FileManager+Extension.swift
-//  MyToDos
-//
-//  Created by Stewart Lynch on 2021-04-07.
-//
 
 import UIKit
 

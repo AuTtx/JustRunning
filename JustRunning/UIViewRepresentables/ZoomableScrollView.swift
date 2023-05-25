@@ -2,7 +2,7 @@
 //  ZoomableScrollView.swift
 //  My Images
 //
-//  Created by Stewart Lynch on 2021-08-04.
+//  
 //
 // See https://newbedev.com/isn-t-there-an-easy-way-to-pinch-to-zoom-in-an-image-in-swiftui
 // I have added 'uiView.setZoomScale(1.0, animated: true)' as well so that when switching

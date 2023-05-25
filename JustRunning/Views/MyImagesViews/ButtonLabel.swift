@@ -1,9 +1,3 @@
-//
-//  ButtonLabel.swift
-//  ButtonLabel
-//
-//  Created by Stewart Lynch on 2021-08-17.
-//
 
 import SwiftUI
 

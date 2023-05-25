@@ -1,9 +1,3 @@
-//
-//  CircleButton.swift
-//  Countdown
-//
-//  Created by Leonardo Bilia on 16/08/20.
-//
 
 import SwiftUI
 

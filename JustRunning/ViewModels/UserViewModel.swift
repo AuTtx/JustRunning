@@ -40,13 +40,6 @@ class UserViewmodel: ObservableObject{
     
     func getUsers(){
         let request = NSFetchRequest<UserEntity>(entityName: "UserEntity")
-        
-        //        let sort = NSSortDescriptor(keyPath: \UserEntity.name, ascending: true)
-        //        request.sortDescriptors = [sort]
-        //
-        //        let filter = NSPredicate(format: "name == %@", "Autt")
-        //        request.predicate = filter
-        
         do{
             users = try manager.context.fetch(request)
             print("成功更新users")

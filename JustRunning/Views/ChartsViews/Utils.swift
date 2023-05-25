@@ -1,9 +1,3 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-Utility views and functions.
-*/
 
 import SwiftUI
 

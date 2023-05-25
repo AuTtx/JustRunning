@@ -1,10 +1,3 @@
-//
-//  ImagePicker.swift
-//  SwiftUIImagePicker
-//
-//  Created by Simon Ng on 10/6/2020.
-//  Copyright © 2020 AppCoda. All rights reserved.
-//
 
 import UIKit
 import SwiftUI

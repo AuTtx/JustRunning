@@ -18,7 +18,7 @@ struct LocationData {
 
         /// Average daily sales for each weekday.
         /// The `weekday` property is a `Date` that represents a weekday.
-        let sales: [(weekday: Date, sales: Int)]
+        let dis: [(weekday: Date, dis: Int)]
 
         /// The identifier for the series.
         var id: String { city }
@@ -26,60 +26,60 @@ struct LocationData {
 
     /// Sales by location and weekday for the last 30 days.
     static let last30Days: [Series] = [
-        .init(city: "Cupertino", sales: [
-            (weekday: date(year: 2022, month: 5, day: 2), sales: 54),
-            (weekday: date(year: 2022, month: 5, day: 3), sales: 42),
-            (weekday: date(year: 2022, month: 5, day: 4), sales: 88),
-            (weekday: date(year: 2022, month: 5, day: 5), sales: 49),
-            (weekday: date(year: 2022, month: 5, day: 6), sales: 42),
-            (weekday: date(year: 2022, month: 5, day: 7), sales: 125),
-            (weekday: date(year: 2022, month: 5, day: 8), sales: 67)
+        .init(city: "晚上", dis: [
+            (weekday: date(year: 2022, month: 5, day: 2), dis: 54),
+            (weekday: date(year: 2022, month: 5, day: 3), dis: 42),
+            (weekday: date(year: 2022, month: 5, day: 4), dis: 88),
+            (weekday: date(year: 2022, month: 5, day: 5), dis: 49),
+            (weekday: date(year: 2022, month: 5, day: 6), dis: 42),
+            (weekday: date(year: 2022, month: 5, day: 7), dis: 125),
+            (weekday: date(year: 2022, month: 5, day: 8), dis: 67)
 
         ]),
-        .init(city: "San Francisco", sales: [
-            (weekday: date(year: 2022, month: 5, day: 2), sales: 81),
-            (weekday: date(year: 2022, month: 5, day: 3), sales: 90),
-            (weekday: date(year: 2022, month: 5, day: 4), sales: 52),
-            (weekday: date(year: 2022, month: 5, day: 5), sales: 72),
-            (weekday: date(year: 2022, month: 5, day: 6), sales: 84),
-            (weekday: date(year: 2022, month: 5, day: 7), sales: 84),
-            (weekday: date(year: 2022, month: 5, day: 8), sales: 137)
+        .init(city: "白天", dis: [
+            (weekday: date(year: 2022, month: 5, day: 2), dis: 81),
+            (weekday: date(year: 2022, month: 5, day: 3), dis: 90),
+            (weekday: date(year: 2022, month: 5, day: 4), dis: 52),
+            (weekday: date(year: 2022, month: 5, day: 5), dis: 72),
+            (weekday: date(year: 2022, month: 5, day: 6), dis: 84),
+            (weekday: date(year: 2022, month: 5, day: 7), dis: 84),
+            (weekday: date(year: 2022, month: 5, day: 8), dis: 137)
         ])
     ]
 
     /// The best weekday and location for the last 30 days.
     static let last30DaysBest = (
-        city: "San Francisco",
+        city: "晚上",
         weekday: date(year: 2022, month: 5, day: 8),
-        sales: 137
+        dis: 137
     )
 
     /// The best weekday and location for the last 12 months.
     static let last12MonthsBest = (
-        city: "San Francisco",
+        city: "白天",
         weekday: date(year: 2022, month: 5, day: 8),
-        sales: 113
+        dis: 113
     )
 
     /// Sales by location and weekday for the last 12 months.
     static let last12Months: [Series] = [
-        .init(city: "Cupertino", sales: [
-            (weekday: date(year: 2022, month: 5, day: 2), sales: 64),
-            (weekday: date(year: 2022, month: 5, day: 3), sales: 60),
-            (weekday: date(year: 2022, month: 5, day: 4), sales: 47),
-            (weekday: date(year: 2022, month: 5, day: 5), sales: 55),
-            (weekday: date(year: 2022, month: 5, day: 6), sales: 55),
-            (weekday: date(year: 2022, month: 5, day: 7), sales: 105),
-            (weekday: date(year: 2022, month: 5, day: 8), sales: 67)
+        .init(city: "晚上", dis: [
+            (weekday: date(year: 2022, month: 5, day: 2), dis: 64),
+            (weekday: date(year: 2022, month: 5, day: 3), dis: 60),
+            (weekday: date(year: 2022, month: 5, day: 4), dis: 47),
+            (weekday: date(year: 2022, month: 5, day: 5), dis: 55),
+            (weekday: date(year: 2022, month: 5, day: 6), dis: 55),
+            (weekday: date(year: 2022, month: 5, day: 7), dis: 105),
+            (weekday: date(year: 2022, month: 5, day: 8), dis: 67)
         ]),
-        .init(city: "San Francisco", sales: [
-            (weekday: date(year: 2022, month: 5, day: 2), sales: 57),
-            (weekday: date(year: 2022, month: 5, day: 3), sales: 56),
-            (weekday: date(year: 2022, month: 5, day: 4), sales: 66),
-            (weekday: date(year: 2022, month: 5, day: 5), sales: 61),
-            (weekday: date(year: 2022, month: 5, day: 6), sales: 60),
-            (weekday: date(year: 2022, month: 5, day: 7), sales: 77),
-            (weekday: date(year: 2022, month: 5, day: 8), sales: 113)
+        .init(city: "白天", dis: [
+            (weekday: date(year: 2022, month: 5, day: 2), dis: 57),
+            (weekday: date(year: 2022, month: 5, day: 3), dis: 56),
+            (weekday: date(year: 2022, month: 5, day: 4), dis: 66),
+            (weekday: date(year: 2022, month: 5, day: 5), dis: 61),
+            (weekday: date(year: 2022, month: 5, day: 6), dis: 60),
+            (weekday: date(year: 2022, month: 5, day: 7), dis: 77),
+            (weekday: date(year: 2022, month: 5, day: 8), dis: 113)
         ])
     ]
 }

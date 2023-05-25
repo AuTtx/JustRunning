@@ -12,7 +12,8 @@ struct JustRunningApp: App {
     var body: some Scene {
         WindowGroup {
             LoginView().environmentObject(UserViewmodel())
-//                .environmentObject(ViewModel())
+                .environmentObject(ViewModel())
+                .environmentObject(CountdownModel())
         }
     }
 }

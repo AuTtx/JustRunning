@@ -10,6 +10,7 @@ import MapKit
 
 struct RunningView: View {
     @EnvironmentObject var vmRunning: ViewModel
+    @EnvironmentObject var cm: CountdownModel
     @StateObject private var vm = MapViewModel()
     @State private var trackingMode: MapUserTrackingMode = .follow
     @State private var choosePicker: TimerPicker = .countdown
@@ -27,8 +28,8 @@ struct RunningView: View {
                     switch choosePicker{
                     case .countdown:
                         CountDownView()
-                            .environmentObject(CountdownModel())
-    //                        .environmentObject(vmRunning)
+                            .environmentObject(cm)
+                            .environmentObject(vmRunning)
                     case .timer:
                         TimerView()
                     }
